@@ -5,6 +5,6 @@
     <div class="mb-6 rounded border border-green-300 bg-green-50 p-4 text-green-800">
         {{ $value }}
     </div>
-@endsession
+    @endsession
     {{ $slot }}
 </x-bookme.layout>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\EvidenciaRequest;
 
 class EvidenciaController extends Controller
 {
@@ -23,8 +23,17 @@ class EvidenciaController extends Controller
 
     public function edit($id) {
         abort_unless(isset($this->evidencias[$id]), 404);
-
         return view('evidencias.edit', ['titulo' => 'Modificar evidencia '.$id, 'id' => $id]);
+    }
+
+    public function store(EvidenciaRequest $request){
+        $datos = $request->validated();
+        return redirect()->route('evidencias.index')->with('mensaje', 'Evidencia '. $datos['descripcion'] .' creada.');
+    }
+
+    public function update(EvidenciaRequest $request, $id){
+        $datos = $request->validated();
+        return redirect()->route('evidencias.show')->with('mensaje', 'Evidencia '. $datos['descripcion'] .'actualizada');
     }
 
     private array $evidencias = [
