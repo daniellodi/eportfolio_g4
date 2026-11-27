@@ -23,7 +23,7 @@ class EvidenciaController extends Controller
 
     public function edit($id) {
         abort_unless(isset($this->evidencias[$id]), 404);
-        return view('evidencias.edit', ['titulo' => 'Modificar evidencia '.$id, 'id' => $id]);
+        return view('evidencias.edit', ['titulo' => 'Modificar evidencia '.$id, 'id' => $id, 'evidencias' => $this->evidencias]);
     }
 
     public function store(EvidenciaRequest $request){
