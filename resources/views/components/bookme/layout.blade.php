@@ -36,6 +36,7 @@
     <body class="antialiased">
         <x-bookme.header/>
         <x-bookme.main>
+            
             {{ $slot }}
         </x-bookme.main>
         <x-bookme.footer/>

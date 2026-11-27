@@ -28,7 +28,7 @@ class EvidenciaRequest extends FormRequest
         return [
             'estudiante_id.required' => 'El campo Estudiante es obligatorio',
             'tarea_id.required' => 'El campo Tarea es obligatorio',
-            'url.required' => 'El campo URL es obligatorio',
+            'url.required' => 'La dirección de la evidencia no es una URL válida.',
             'descripcion.required' => 'El campo Descripcion es obligatorio',
             'estado_validacion.required' => 'Selecciona un estado de validacion'
         ];

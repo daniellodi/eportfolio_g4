@@ -13,4 +13,7 @@
             </x-bookme.member>
         </div>
     @endforeach
+    <div class="flex justify-center">
+        <x-bookme.boton :href="route('evidencias.create')">Crear Evidencia</x-bookme.boton>
+    </div>
 </x-layout>

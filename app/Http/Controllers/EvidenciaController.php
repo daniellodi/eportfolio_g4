@@ -33,7 +33,7 @@ class EvidenciaController extends Controller
 
     public function update(EvidenciaRequest $request, $id){
         $datos = $request->validated();
-        return redirect()->route('evidencias.show')->with('mensaje', 'Evidencia '. $datos['descripcion'] .'actualizada');
+        return redirect()->route('evidencias.show', ['id' => $id])->with('mensaje', 'Evidencia '. $id .' actualizada');
     }
 
     private array $evidencias = [
